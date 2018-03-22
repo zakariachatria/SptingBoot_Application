@@ -1,12 +1,13 @@
 package com.applicationspringboot.autoformation.modal;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity(name = "t_tasks")
-public class Task {
+public class Task implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
@@ -52,6 +53,10 @@ public class Task {
 
     public void setFinished(boolean finished) {
         this.finished = finished;
+    }
+
+    public Task(){
+
     }
 
     public Task(String name, String description, Date dateCreated, boolean finished) {
