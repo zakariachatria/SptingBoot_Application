@@ -22,5 +22,10 @@ public class AppRestController {
     public String allTasks(){
         return taskService.findAll().toString();
     }
-
+    @GetMapping("/addTask")
+    public String addTask(@RequestParam String name,@RequestParam String desc){
+        Task task =new Task(name,desc, new Date(),false);
+        taskService.save(task);
+        return "task added";
+    }
 }
