@@ -28,4 +28,9 @@ public class AppRestController {
         taskService.save(task);
         return "task added";
     }
+    @GetMapping("/deleteTask")
+    public  String deleteTask(@RequestParam int id){
+        taskService.delete(id);
+        return "task deleted";
+    }
 }
