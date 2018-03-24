@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity(name = "t_tasks")
-public class Task implements Serializable {
+public class Task  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
